@@ -9,10 +9,11 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .headerNav {
-  height: 35px;
+  height: 5vh;
   width: 100%;
   background-color: white;
   position: fixed;
@@ -23,40 +24,47 @@ body {
   flex-direction: row;
 }
 .headerNav button {
-  margin: 0 2vw;
+  margin: 0 10px;
   border: none;
   background-color: transparent;
   color: black;
   font-weight: 500;
   cursor: pointer;
 }
+.headerNav .navBox {
+  width: 65px;
+  height: 4px;
+  background-color: black;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  translate: -110%;
+  transition: 0.3s;
+}
 
 .main {
   width: 100%;
-  margin: 35px 0;
+  margin: 5vh 0;
   display: flex;
-  min-height: 100vh;
   justify-content: center;
   align-self: center;
   box-sizing: border-box;
   padding: 1vh 1vh;
-  overflow: visible;
 }
 .main img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 .main .mainGallery {
   width: 100%;
   display: grid;
-  box-sizing: border-box;
   grid-template-columns: auto auto;
-  column-gap: 10px;
-  row-gap: none;
+  grid-template-rows: auto auto;
+  gap: 10px;
 }
 .main .mainGallery .postBox {
   width: 100%;
-  height: max-content;
 }
 .main .mainGallery .postBox .boxSett {
   width: 100%;
@@ -76,7 +84,7 @@ body {
 }
 
 .footerNav {
-  height: 40px;
+  height: 5vh;
   width: 100%;
   background-color: rgb(255, 255, 255);
   position: fixed;
@@ -94,7 +102,13 @@ body {
 .footerNav button i {
   pointer-events: none;
 }
+.footerNav button:focus {
+  color: black;
+}
 .footerNav .navBtn {
   color: rgb(46, 46, 46);
   transition: 0.5s;
+}
+.footerNav .active {
+  color: pink;
 }/*# sourceMappingURL=style.css.map */
