@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headerNav {
+  height: 35px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.headerNav button {
+  margin: 0 2vw;
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.main {
+  width: 100%;
+  margin: 35px 0;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-self: center;
+  box-sizing: border-box;
+  padding: 1vh 1vh;
+  overflow: visible;
+}
+.main img {
+  width: 100%;
+  border-radius: 10px;
+}
+.main .mainGallery {
+  width: 100%;
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  row-gap: none;
+}
+.main .mainGallery .postBox {
+  width: 100%;
+  height: max-content;
+}
+.main .mainGallery .postBox .boxSett {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .mainGallery .postBox .boxSett p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 160px;
+  height: 1.2em;
+  white-space: nowrap;
+}
+.main .mainGallery .postBox .boxSett i {
+  cursor: pointer;
+}
+
+.footerNav {
+  height: 40px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.footerNav button {
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+.footerNav button i {
+  pointer-events: none;
+}
+.footerNav .navBtn {
+  color: rgb(46, 46, 46);
+  transition: 0.5s;
+}/*# sourceMappingURL=style.css.map */
