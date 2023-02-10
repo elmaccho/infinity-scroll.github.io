@@ -48,39 +48,69 @@ body {
   margin: 5vh 0;
   display: flex;
   justify-content: center;
-  align-self: center;
+  align-items: center;
   box-sizing: border-box;
   padding: 1vh 1vh;
+  flex-direction: column;
 }
-.main img {
-  width: 100%;
-  border-radius: 15px;
-}
-.main .mainGallery {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  gap: 10px;
-}
-.main .mainGallery .postBox {
-  width: 100%;
-}
-.main .mainGallery .postBox .boxSett {
-  width: 100%;
+.main .postBox {
+  margin: 50px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: max-content;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.main .postBox img {
+  border-radius: 20px;
+}
+.main .postBox .postInfo {
+  width: 95%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
-.main .mainGallery .postBox .boxSett p {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 160px;
-  height: 1.2em;
-  white-space: nowrap;
+.main .postBox .postInfo button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  margin: 0 5px;
 }
-.main .mainGallery .postBox .boxSett i {
-  cursor: pointer;
+.main .postBox .counter {
+  width: 93%;
+}
+.main .postBox .counter .count {
+  display: flex;
+  justify-content: left;
+  font-size: 12px;
+  font-weight: 600;
+}
+.main .postBox .commentBox {
+  margin-top: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 95%;
+}
+.main .postBox .commentBox i {
+  font-size: 20px;
+  background-color: rgb(234, 234, 234);
+  padding: 8px 10px;
+  border-radius: 50px;
+}
+.main .postBox .commentBox input {
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(234, 234, 234);
+  margin-left: 10px;
+  text-indent: 10px;
+  outline: none;
 }
 
 .footerNav {

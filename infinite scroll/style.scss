@@ -54,52 +54,124 @@ body{
     width: 100%;
     margin: 5vh 0;
     display: flex;
-    // min-height: 90vh;
     justify-content: center;
-    align-self: center;
+    align-items: center;
     box-sizing: border-box;
     padding: 1vh 1vh;
-    // overflow:visible;
+    flex-direction: column;
 
-    img{
-        width: 100%;
+    // img{
+    //     width: 100%;
 
-        border-radius: 15px;
-    }
+    //     border-radius: 15px;
+    // }
 
-    .mainGallery{
-        // background-color: red;
-        width: 100%;
+    // .mainGallery{
+    //     // background-color: red;
+    //     width: 100%;
 
-        display: grid; 
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto;
-        gap: 10px;
+    //     display: grid; 
+    //     grid-template-columns: auto auto;
+    //     grid-template-rows: auto auto;
+    //     gap: 10px;
+
+    //     .postBox{
+    //         width: 100%;
+    //         // height: max-content;
+
+    //         .boxSett{
+    //             width: 100%;
+    //             display: flex;
+    //             justify-content:space-between;
+    //             align-items: center;
+
+    //             p{
+    //                 text-overflow: ellipsis;
+    //                 overflow: hidden; 
+    //                 width: 160px; 
+    //                 height: 1.2em; 
+    //                 white-space: nowrap;
+    //             }
+
+    //             i{
+    //                 cursor: pointer;
+    //             }
+    //         }
+    //     }
+    // }
+
 
         .postBox{
-            width: 100%;
-            // height: max-content;
+            // background-color: red;
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width:max-content;
+            border-radius: 20px;
+            padding-bottom: 20px;
 
-            .boxSett{
-                width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+            img{
+                border-radius: 20px;
+            }
+
+            .postInfo{
+                width: 95%;
+                // background-color: blue;
+                height: 30px;
                 display: flex;
-                justify-content:space-between;
+                justify-content:flex-start;
                 align-items: center;
 
-                p{
-                    text-overflow: ellipsis;
-                    overflow: hidden; 
-                    width: 160px; 
-                    height: 1.2em; 
-                    white-space: nowrap;
+                button{
+                    border: none;
+                    background-color: transparent;
+                    font-size: 20px;
+                    margin: 0 5px;
                 }
+            }
+
+            .counter{
+                width: 93%;
+
+                .count{
+                    display: flex;
+                    justify-content: left;
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+
+            .commentBox{
+                margin-top: 10px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                // background-color: tomato;
+                width: 95%;
 
                 i{
-                    cursor: pointer;
+                    font-size: 20px;
+                    background-color: rgb(234, 234, 234);
+                    padding: 8px 10px;
+                    border-radius: 50px;
+                }
+                input{
+                    width: 250px;
+                    height: 30px;
+                    border-radius: 10px;
+                    // border: 2px solid rgb(193, 193, 193);
+                    border:none;
+                    background-color: rgb(234, 234, 234);
+                    margin-left: 10px;
+                    text-indent: 10px;
+                    outline: none;
                 }
             }
         }
-    }
 
 }
 .footerNav{

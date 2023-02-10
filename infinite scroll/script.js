@@ -1,90 +1,56 @@
+const pCounters = document.querySelectorAll('.count')
 const imgs = document.querySelectorAll('img')
-const navBtns = document.querySelectorAll('.navBtn')
-const mainGallery = document.querySelector('.mainGallery')
 const search = document.querySelector('.search')
-const watch = document.querySelector('.watch')
-const navBox = document.querySelector('.navBox')
-
-const postBox = document.createElement('div')
-const imgBox = document.createElement('img')
-const pBox = document.createElement('p')
-
-postBox.classList.add('postBox')
-
-const URL = 'https://dog.ceo/api/breeds/image/random'
-
-
-const watchClick = () => {
-    navBox.style.left = "72%"
-    navBox.style.width = "60px"
-}
-
-const searchClick = () => {
-    navBox.style.left = "50%"
-    navBox.style.width = "67px"
-}
-
-
-
-
-for(const img of imgs){
-    for(let i=0; i<imgs.length; i++){
-        fetch(URL)
-            .then(res => res.json())
-            .then(data => img.setAttribute('src', data.message))
-            .catch(err => console.error(err))
-    }
-}
-
-// const createBox = () => {
-//     const boxDiv = document.createElement('div')
-//     const boxSett = boxDiv.createElement('div')
-//     const boxImg = document.createElement('img')
-//     const boxP = document.createElement('p')
-//     const boxI = document.createElement('i')
-
-    
-//     boxDiv.classList.add('postBox')
-//     boxSett.classList.add('boxSett')
-//     boxI.classList.add('fa-solid fa-ellipsis')
-
-//     boxDiv.append(boxImg)
-//     boxSett.append(boxP)
-//     boxSett.append(boxI)
-
-// }
-
+const main = document.querySelector('.main')
 
 const createPost = () => {
-    mainGallery.append(postBox)
-    postBox.append(imgBox)
-
-}
-
-
-const createImage = () => {
-    for(const img of imgs){
-        for(let i=0; i<imgs.length; i++){
-            fetch(URL)
-                .then(res => res.json())
-                .then(data => img.setAttribute('src', data.message))
-                .catch(err => console.error(err))
+    
+    
+    const postBox = document.createElement('div')
+    const postImg = document.createElement('img')
+    const postInfo = document.createElement('div')
+    const postCounter = document.createElement('div')
+    const postPCount = document.createElement('p')
+    const postComment = document.createElement('div')
+    
+    postBox.append(postImg)
+    postBox.append(postInfo)
+    postCounter.append(postPCount)
+    postBox.append(postCounter)
+    postBox.append(postComment)
+    
+    postCounter.classList.add('counter')
+    postBox.classList.add('postBox')
+    postPCount.classList.add('count')
+    postComment.classList.add('commentBox')
+    postInfo.classList.add('postInfo')
+    
+    postPCount.textContent =  Math.floor(Math.random() * 10000) + " polubień"
+    postInfo.innerHTML = `                
+    <button>
+    <i class="fa-regular fa-heart"></i>
+    </button>
+    <button>
+    <i class="fa-regular fa-comment"></i>
+    </button>
+    <button>
+    <i class="fa-regular fa-paper-plane"></i>
+    </button>`
+    postComment.innerHTML = `<i class="fa-regular fa-user"></i> <input type="text" name="" id="" placeholder="Dodaj komentarz...">`
+    
+    
+    for(let i=0; i<pCounters.length; i++){
+        for(const counter of pCounters){
+            let likes = Math.floor(Math.random() * 10000)
+            counter.textContent = `${likes} polubień`
         }
     }
+
+    let randId = Math.floor(Math.random()*1000+1)
+    postImg.setAttribute('src', `https://picsum.photos/340/250?random=${randId}`)
+
+    main.append(postBox)
+
 }
 
-window.addEventListener('scroll', () => {
-	const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-	
-	console.log( { scrollTop, scrollHeight, clientHeight });
-	
-	if(clientHeight + scrollTop >= scrollHeight - 5) {
-		console.log('nowe posty');
-        createPost()
-	}
-})
-
-
-
-watch.addEventListener('click', watchClick)
-search.addEventListener('click', searchClick)
+search.addEventListener('click', createPost)
