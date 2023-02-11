@@ -5,6 +5,7 @@ const main = document.querySelector('.main')
 const loadingBox = document.querySelector('.loadingBox')
 
 
+
 const createPost = () => {
     const postBox = document.createElement('div')
     const postImg = document.createElement('img')
@@ -41,7 +42,7 @@ const createPost = () => {
 
 
     let randId = Math.floor(Math.random()*1000+1)
-    postImg.setAttribute('src', `https://picsum.photos/340/250?random=${randId}`)
+    postImg.setAttribute('src', `https://picsum.photos/680/500?random=${randId}`)
 
     main.append(postBox)
 }
@@ -74,7 +75,7 @@ window.addEventListener('scroll', () => {
                 createPost()
                 createPost()
 
-                document.body.style.overflow = "scroll"
+                document.body.style.overflowY = "scroll"
                 loadingBox.classList.remove("show")
                 main.style.filter = "grayscale(0) blur(0)"
             }, 1000);

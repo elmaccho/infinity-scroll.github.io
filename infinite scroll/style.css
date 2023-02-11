@@ -44,112 +44,34 @@ body {
   transition: 0.3s;
 }
 
-.main {
+.footerNav {
+  height: 5vh;
   width: 100%;
-  margin: 5vh 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 1vh 1vh;
-  flex-direction: column;
-  transition: 0.5s;
-}
-.main .postBox {
-  margin: 50px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: max-content;
-  border-radius: 20px;
-  padding-bottom: 20px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-.main .postBox img {
-  border-radius: 20px;
-}
-.main .postBox .postInfo {
-  width: 95%;
-  height: 30px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.main .postBox .postInfo button {
-  border: none;
-  background-color: transparent;
-  font-size: 20px;
-  margin: 0 5px;
-}
-.main .postBox .counter {
-  width: 93%;
-}
-.main .postBox .counter .count {
-  display: flex;
-  justify-content: left;
-  font-size: 12px;
-  font-weight: 600;
-}
-.main .postBox .commentBox {
-  margin-top: 10px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  width: 95%;
-}
-.main .postBox .commentBox i {
-  font-size: 20px;
-  background-color: rgb(234, 234, 234);
-  padding: 8px 10px;
-  border-radius: 50px;
-}
-.main .postBox .commentBox input {
-  width: 250px;
-  height: 30px;
-  border-radius: 10px;
-  border: none;
-  background-color: rgb(234, 234, 234);
-  margin-left: 10px;
-  text-indent: 10px;
-  outline: none;
-}
-
-.loadingBox {
   background-color: rgb(255, 255, 255);
   position: fixed;
-  bottom: -50px;
-  width: 100%;
-  height: 50px;
-  transition: 0.3s;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  bottom: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
-.loadingBox i {
-  margin: 0 5px;
+.footerNav button {
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
 }
-.loadingBox i:nth-child(1) {
-  animation-name: dot1;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+.footerNav button i {
+  pointer-events: none;
 }
-.loadingBox i:nth-child(2) {
-  animation-name: dot2;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.1s;
+.footerNav button:focus {
+  color: black;
 }
-.loadingBox i:nth-child(3) {
-  animation-name: dot3;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-delay: 0.2s;
+.footerNav .navBtn {
+  color: rgb(46, 46, 46);
+  transition: 0.5s;
 }
-
-.show {
-  bottom: 30px;
+.footerNav .active {
+  color: pink;
 }
 
 @keyframes dot1 {
@@ -185,32 +107,340 @@ body {
     transform: translateY(0px);
   }
 }
-.footerNav {
-  height: 5vh;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+@media screen and (min-width: 769px) {
+  .main {
+    width: 100%;
+    margin: 5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1vh 1vh;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+  .main .postBox {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 600px;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  .main .postBox img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .main .postBox .postInfo {
+    width: 95%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .main .postBox .postInfo button {
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .main .postBox .counter {
+    width: 93%;
+  }
+  .main .postBox .counter .count {
+    display: flex;
+    justify-content: left;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .main .postBox .commentBox {
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 95%;
+  }
+  .main .postBox .commentBox i {
+    font-size: 25px;
+    background-color: rgb(234, 234, 234);
+    padding: 8px 10px;
+    border-radius: 50px;
+  }
+  .main .postBox .commentBox input {
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(234, 234, 234);
+    margin-left: 10px;
+    text-indent: 10px;
+    outline: none;
+  }
+  .loadingBox {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20%;
+    height: 25%;
+    transition: 0.3s;
+    border-radius: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    opacity: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0;
+  }
+  .loadingBox i {
+    margin: 0 5px;
+    font-size: 25px;
+  }
+  .loadingBox i:nth-child(1) {
+    animation-name: dot1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  .loadingBox i:nth-child(2) {
+    animation-name: dot2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+  }
+  .loadingBox i:nth-child(3) {
+    animation-name: dot3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+  }
+  .show {
+    scale: 1;
+  }
 }
-.footerNav button {
-  border: none;
-  background-color: transparent;
-  font-size: 18px;
-  cursor: pointer;
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .main {
+    width: 100%;
+    margin: 5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1vh 1vh;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+  .main .postBox {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  .main .postBox img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .main .postBox .postInfo {
+    width: 95%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .main .postBox .postInfo button {
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    margin: 0 5px;
+  }
+  .main .postBox .counter {
+    width: 93%;
+  }
+  .main .postBox .counter .count {
+    display: flex;
+    justify-content: left;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .main .postBox .commentBox {
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 95%;
+  }
+  .main .postBox .commentBox i {
+    font-size: 25px;
+    background-color: rgb(234, 234, 234);
+    padding: 8px 10px;
+    border-radius: 50px;
+  }
+  .main .postBox .commentBox input {
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(234, 234, 234);
+    margin-left: 10px;
+    text-indent: 10px;
+    outline: none;
+  }
+  .loadingBox {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: -50px;
+    width: 100%;
+    height: 50px;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loadingBox i {
+    margin: 0 5px;
+  }
+  .loadingBox i:nth-child(1) {
+    animation-name: dot1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  .loadingBox i:nth-child(2) {
+    animation-name: dot2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+  }
+  .loadingBox i:nth-child(3) {
+    animation-name: dot3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+  }
+  .show {
+    bottom: 30px;
+  }
 }
-.footerNav button i {
-  pointer-events: none;
-}
-.footerNav button:focus {
-  color: black;
-}
-.footerNav .navBtn {
-  color: rgb(46, 46, 46);
-  transition: 0.5s;
-}
-.footerNav .active {
-  color: pink;
+@media screen and (max-width: 480px) {
+  .main {
+    width: 100%;
+    margin: 5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1vh 1vh;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+  .main .postBox {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  .main .postBox img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .main .postBox .postInfo {
+    width: 95%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .main .postBox .postInfo button {
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    margin: 0 5px;
+  }
+  .main .postBox .counter {
+    width: 93%;
+  }
+  .main .postBox .counter .count {
+    display: flex;
+    justify-content: left;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .main .postBox .commentBox {
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 95%;
+  }
+  .main .postBox .commentBox i {
+    font-size: 20px;
+    background-color: rgb(234, 234, 234);
+    padding: 8px 10px;
+    border-radius: 50px;
+  }
+  .main .postBox .commentBox input {
+    width: 250px;
+    min-width: 20px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(234, 234, 234);
+    margin-left: 10px;
+    text-indent: 10px;
+    outline: none;
+  }
+  .loadingBox {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: -50px;
+    width: 100%;
+    height: 50px;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loadingBox i {
+    margin: 0 5px;
+  }
+  .loadingBox i:nth-child(1) {
+    animation-name: dot1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  .loadingBox i:nth-child(2) {
+    animation-name: dot2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+  }
+  .loadingBox i:nth-child(3) {
+    animation-name: dot3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+  }
+  .show {
+    bottom: 30px;
+  }
 }/*# sourceMappingURL=style.css.map */
