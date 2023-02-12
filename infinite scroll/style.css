@@ -142,6 +142,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
   }
   .main .postBox .postInfo button {
     border: none;
@@ -149,6 +150,36 @@ body {
     font-size: 25px;
     margin: 0 5px;
     cursor: pointer;
+    transition: 0.3s;
+  }
+  .main .postBox .postInfo button:hover {
+    opacity: 70%;
+  }
+  .main .postBox .postInfo .postMenu {
+    position: absolute;
+    right: 0;
+  }
+  .main .postBox .postInfo .postMenu .postMenuList {
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 10px;
+    position: absolute;
+    background-color: white;
+    right: 0;
+    transition: 0.3s;
+  }
+  .main .postBox .postInfo .postMenu .postMenuList ul li {
+    list-style-type: none;
+    width: 100px;
+    margin: 10px 0;
+  }
+  .main .postBox .postInfo .postMenu .postMenuList ul li button {
+    font-size: 15px;
+    position: relative;
+    left: -10px;
+  }
+  .main .postBox .postInfo .postMenu .postMenuList ul li button i {
+    position: relative;
+    left: -10px;
   }
   .main .postBox .counter {
     width: 93%;
@@ -221,6 +252,10 @@ body {
   }
   .show {
     scale: 1;
+  }
+  .hideMenu {
+    transform: scale(0);
+    transform-origin: 100px top;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {

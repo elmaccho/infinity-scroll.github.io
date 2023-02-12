@@ -185,10 +185,12 @@ body{
     
                 .postInfo{
                     width: 95%;
+                    // background-color: red;
                     height: 30px;
                     display: flex;
                     justify-content:flex-start;
                     align-items: center;
+                    position: relative;
     
                     button{
                         border: none;
@@ -196,6 +198,49 @@ body{
                         font-size: 25px;
                         margin: 0 5px;
                         cursor: pointer;
+                        transition: 0.3s;
+                    }
+                    button:hover{
+                        opacity: 70%;
+                    }
+
+
+                    .postMenu{
+                        position: absolute;
+                        right:0;
+
+                        .postMenuList{
+                            border: 1px solid rgb(234, 234, 234);
+                            border-radius: 10px;
+                            position: absolute;
+                            background-color: white;
+                            right: 0;
+                            transition: 0.3s;
+                            // background-color: red;
+
+                            ul{
+
+
+                                li{
+                                    list-style-type: none;
+                                    // background-color: red;
+                                    width: 100px;
+                                    margin: 10px 0;
+    
+                                    button{
+                                        font-size: 15px;
+                                        position: relative;
+                                        left: -10px;
+    
+                                        i{
+                                            position: relative;
+                                            left: -10px;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
                     }
                 }
     
@@ -228,7 +273,6 @@ body{
                         width: 80%;
                         height: 30px;
                         border-radius: 10px;
-                        // border: 2px solid rgb(193, 193, 193);
                         border:none;
                         background-color: rgb(234, 234, 234);
                         margin-left: 10px;
@@ -283,6 +327,11 @@ body{
 
     .show{
         scale:1;
+    }
+
+    .hideMenu{
+        transform: scale(0);
+        transform-origin: 100px top;
     }
 }
 

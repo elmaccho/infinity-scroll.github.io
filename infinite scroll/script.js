@@ -3,6 +3,8 @@ const imgs = document.querySelectorAll('img')
 const search = document.querySelector('.search')
 const main = document.querySelector('.main')
 const loadingBox = document.querySelector('.loadingBox')
+const postMenuBtns = document.querySelectorAll('.postMenuBtn')
+const postMenuLists = document.querySelectorAll('.postMenuList')
 
 
 
@@ -36,7 +38,26 @@ const createPost = () => {
     </button>
     <button>
     <i class="fa-regular fa-paper-plane"></i>
-    </button>`
+    </button>
+    
+                    <div class="postMenu">
+                    <button class="postMenuBtn">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                    <div class="postMenuList hideMenu">
+                        <ul>
+                            <li>
+                                <button><i class="fa-solid fa-caret-right"></i>Usuń post</button>
+                            </li>
+                            <li>
+                                <button><i class="fa-solid fa-caret-right"></i>Edytuj</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+    `
     postComment.innerHTML = `<i class="fa-regular fa-user"></i> <input type="text" name="" id="" placeholder="Dodaj komentarz...">`
     
 
@@ -54,25 +75,37 @@ for(let i=0; i<pCounters.length; i++){
     }
 }
 
+
+
 const loadingDots = () => {
     document.body.style.overflow = "hidden"
     loadingBox.classList.add("show")
 }
 
+const postMenuToggle = (e) => {
+    // console.log(e.target);
+    e.target.style.color = "red"
+
+    const closestMenuList = e.target.closest('.postMenuList')
+    console.log(closestMenuList)
+
+    // .classlist.toggle("hideMenu")
+}
+
 window.addEventListener('scroll', () => {
-	const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 	
-	console.log( { scrollTop, scrollHeight, clientHeight });
+	// console.log( { scrollTop, scrollHeight, clientHeight });
 	
 	if(clientHeight + scrollTop >= scrollHeight - 5) {
-		// show the loading animation
-
-
+        // show the loading animation
+        
+        
         loadingDots()
         main.style.filter = "grayscale(90%) blur(3px)"
-
-            setTimeout(() => {
-                createPost()
+        
+        setTimeout(() => {
+            createPost()
                 createPost()
 
                 document.body.style.overflowY = "scroll"
@@ -82,3 +115,7 @@ window.addEventListener('scroll', () => {
 
 	}
 })
+
+for(const postMenuBtn of postMenuBtns){
+    postMenuBtn.addEventListener('click', postMenuToggle)
+}
