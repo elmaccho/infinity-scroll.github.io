@@ -1,10 +1,17 @@
 const pCounters = document.querySelectorAll('.count')
 const imgs = document.querySelectorAll('img')
 const search = document.querySelector('.search')
-const main = document.querySelector('.main')
+const mainContainer = document.querySelector('.mainContainer')
 const loadingBox = document.querySelector('.loadingBox')
-const postMenuBtns = document.querySelectorAll('.postMenuBtn')
 const postMenuLists = document.querySelectorAll('.postMenuList')
+const reload = document.querySelector('.reload')
+let postMenuBtns
+let deletePostBtns
+
+// const main = () => {
+//     prepareDOMElements()
+//     prepareDOMEvents()
+// }
 
 
 
@@ -15,6 +22,10 @@ const createPost = () => {
     const postCounter = document.createElement('div')
     const postPCount = document.createElement('p')
     const postComment = document.createElement('div')
+    const postMenuBtns = document.querySelectorAll('.postMenuBtn')
+    const deletePostBtns = document.querySelectorAll('.deletePostBtn')
+
+    
     
     postBox.append(postImg)
     postBox.append(postInfo)
@@ -48,7 +59,7 @@ const createPost = () => {
                     <div class="postMenuList hideMenu">
                         <ul>
                             <li>
-                                <button><i class="fa-solid fa-caret-right"></i>Usuń post</button>
+                                <button class="deletePostBtn"><i class="fa-solid fa-caret-right"></i>Usuń post</button>
                             </li>
                             <li>
                                 <button><i class="fa-solid fa-caret-right"></i>Edytuj</button>
@@ -65,7 +76,19 @@ const createPost = () => {
     let randId = Math.floor(Math.random()*1000+1)
     postImg.setAttribute('src', `https://picsum.photos/680/500?random=${randId}`)
 
-    main.append(postBox)
+
+
+    for(const postMenuBtn of postMenuBtns){
+        postMenuBtn.addEventListener('click', postMenuToggle)
+    }
+    
+    for(const deletePostBtn of deletePostBtns){
+        deletePostBtn.addEventListener('click', deletePost)
+    }
+    mainContainer.append(postBox)
+
+    console.log(deletePostBtns);
+    console.log(postMenuBtns);
 }
 
 for(let i=0; i<pCounters.length; i++){
@@ -75,21 +98,31 @@ for(let i=0; i<pCounters.length; i++){
     }
 }
 
-
-
 const loadingDots = () => {
     document.body.style.overflow = "hidden"
     loadingBox.classList.add("show")
 }
 
 const postMenuToggle = (e) => {
-    // console.log(e.target);
-    e.target.style.color = "red"
+    const closestMenuList = e.target.closest('.postMenu').querySelector('.postMenuList')
+    closestMenuList.classList.toggle("hideMenu")
+}
 
-    const closestMenuList = e.target.closest('.postMenuList')
-    console.log(closestMenuList)
+const deletePost = (e) => {
+    e.target.closest(('.postBox')).remove()
+}
 
-    // .classlist.toggle("hideMenu")
+const reloadPostsBtn = () => {
+    const allPosts = document.querySelectorAll('.postBox')
+    if(allPosts.length === 0){
+        reload.style.display = "block"
+    }
+}
+
+const reloadPostFunc = () => {
+    createPost()
+    createPost()
+    reload.style.display = "none"
 }
 
 window.addEventListener('scroll', () => {
@@ -102,7 +135,7 @@ window.addEventListener('scroll', () => {
         
         
         loadingDots()
-        main.style.filter = "grayscale(90%) blur(3px)"
+        mainContainer.style.filter = "grayscale(90%) blur(3px)"
         
         setTimeout(() => {
             createPost()
@@ -110,12 +143,21 @@ window.addEventListener('scroll', () => {
 
                 document.body.style.overflowY = "scroll"
                 loadingBox.classList.remove("show")
-                main.style.filter = "grayscale(0) blur(0)"
+                mainContainer.style.filter = "grayscale(0) blur(0)"
             }, 1000);
 
 	}
 })
 
-for(const postMenuBtn of postMenuBtns){
-    postMenuBtn.addEventListener('click', postMenuToggle)
-}
+
+
+reload.addEventListener('click', reloadPostFunc)
+
+// for(const postMenuBtn of postMenuBtns){
+//     postMenuBtn.addEventListener('click', postMenuToggle)
+// }
+
+// for(const deletePostBtn of deletePostBtns){
+//     deletePostBtn.addEventListener('click', deletePost)
+// }
+reloadPostsBtn()

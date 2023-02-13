@@ -151,7 +151,7 @@ body{
 }
 
 @media screen and (min-width: 769px){
-    .main{
+    .mainContainer{
         // background-color: red;
         width: 100%;
         margin: 5vh 0;
@@ -282,7 +282,28 @@ body{
                 }
             }
     
-    
+            .reload{
+                display: none;
+
+
+                button{
+                    font-size: 25px;
+                    border:none;
+                    background-color: transparent;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+                i{
+                    transition: 0.3s;
+                }
+                button:hover{
+                    opacity: 70%;
+                }
+                button:hover i {
+                    transform: rotate(180deg);
+                }
+            }    
     
     }  
 
@@ -336,7 +357,7 @@ body{
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
-    .main{
+    .mainContainer{
         // background-color: blueviolet;
         width: 100%;
         margin: 5vh 0;
@@ -358,6 +379,7 @@ body{
                 width:80%;
                 border-radius: 20px;
                 padding-bottom: 20px;
+                position: relative;
     
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
@@ -381,9 +403,49 @@ body{
                         background-color: transparent;
                         font-size: 25px;
                         margin: 0 5px;
+                        cursor: pointer;
                     }
                 }
     
+                .postMenu{
+                    position: absolute;
+                    right:10px;
+                    
+
+                    .postMenuList{
+                        border: 1px solid rgb(234, 234, 234);
+                        border-radius: 10px;
+                        position: absolute;
+                        background-color: white;
+                        right: 0;
+                        transition: 0.3s;
+                        // background-color: red;
+
+                        ul{
+
+
+                            li{
+                                list-style-type: none;
+                                // background-color: red;
+                                width: 100px;
+                                margin: 10px 0;
+
+                                button{
+                                    font-size: 15px;
+                                    position: relative;
+                                    left: -10px;
+
+                                    i{
+                                        position: relative;
+                                        left: -10px;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+
                 .counter{
                     width: 93%;
     
@@ -423,7 +485,28 @@ body{
                 }
             }
     
-    
+            .reload{
+                display: none;
+
+
+                button{
+                    font-size: 25px;
+                    border:none;
+                    background-color: transparent;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+                i{
+                    transition: 0.3s;
+                }
+                button:hover{
+                    opacity: 70%;
+                }
+                button:hover i {
+                    transform: rotate(180deg);
+                }
+            } 
     
     }  
 
@@ -465,10 +548,14 @@ body{
     .show{
             bottom:30px;
     }
+    .hideMenu{
+        transform: scale(0);
+        transform-origin: 100px top;
+    }
 }
 
 @media screen and (max-width: 480px) {
-    .main{
+    .mainContainer{
         // background-color: green;
         width: 100%;
         margin: 5vh 0;
@@ -490,6 +577,7 @@ body{
                 width:80%;
                 border-radius: 20px;
                 padding-bottom: 20px;
+                position: relative;
     
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
@@ -513,9 +601,49 @@ body{
                         background-color: transparent;
                         font-size: 20px;
                         margin: 0 5px;
+                        cursor: pointer;
                     }
                 }
     
+                .postMenu{
+                    position: absolute;
+                    right:10px;
+                    
+
+                    .postMenuList{
+                        border: 1px solid rgb(234, 234, 234);
+                        border-radius: 10px;
+                        position: absolute;
+                        background-color: white;
+                        right: 0;
+                        transition: 0.3s;
+                        // background-color: red;
+
+                        ul{
+
+
+                            li{
+                                list-style-type: none;
+                                // background-color: red;
+                                width: 100px;
+                                margin: 10px 0;
+
+                                button{
+                                    font-size: 15px;
+                                    position: relative;
+                                    left: -10px;
+
+                                    i{
+                                        position: relative;
+                                        left: -10px;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+
                 .counter{
                     width: 93%;
     
@@ -556,7 +684,27 @@ body{
                 }
             }
     
-    
+            .reload{
+                display: none;
+
+                button{
+                    font-size: 5vw;
+                    border:none;
+                    background-color: transparent;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+                i{
+                    transition: 0.3s;
+                }
+                button:hover{
+                    opacity: 70%;
+                }
+                button:hover i {
+                    transform: rotate(180deg);
+                }
+            } 
     
     }  
 
@@ -597,5 +745,10 @@ body{
     
     .show{
             bottom:30px;
+    }
+
+    .hideMenu{
+        transform: scale(0);
+        transform-origin: 100px top;
     }
 }

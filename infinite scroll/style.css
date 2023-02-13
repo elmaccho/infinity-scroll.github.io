@@ -108,7 +108,7 @@ body {
   }
 }
 @media screen and (min-width: 769px) {
-  .main {
+  .mainContainer {
     width: 100%;
     margin: 5vh 0;
     display: flex;
@@ -119,7 +119,7 @@ body {
     flex-direction: column;
     transition: 0.5s;
   }
-  .main .postBox {
+  .mainContainer .postBox {
     margin: 50px 0;
     display: flex;
     justify-content: center;
@@ -130,13 +130,13 @@ body {
     padding-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
-  .main .postBox img {
+  .mainContainer .postBox img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin-bottom: 10px;
     width: 100%;
   }
-  .main .postBox .postInfo {
+  .mainContainer .postBox .postInfo {
     width: 95%;
     height: 30px;
     display: flex;
@@ -144,7 +144,7 @@ body {
     align-items: center;
     position: relative;
   }
-  .main .postBox .postInfo button {
+  .mainContainer .postBox .postInfo button {
     border: none;
     background-color: transparent;
     font-size: 25px;
@@ -152,14 +152,14 @@ body {
     cursor: pointer;
     transition: 0.3s;
   }
-  .main .postBox .postInfo button:hover {
+  .mainContainer .postBox .postInfo button:hover {
     opacity: 70%;
   }
-  .main .postBox .postInfo .postMenu {
+  .mainContainer .postBox .postInfo .postMenu {
     position: absolute;
     right: 0;
   }
-  .main .postBox .postInfo .postMenu .postMenuList {
+  .mainContainer .postBox .postInfo .postMenu .postMenuList {
     border: 1px solid rgb(234, 234, 234);
     border-radius: 10px;
     position: absolute;
@@ -167,43 +167,43 @@ body {
     right: 0;
     transition: 0.3s;
   }
-  .main .postBox .postInfo .postMenu .postMenuList ul li {
+  .mainContainer .postBox .postInfo .postMenu .postMenuList ul li {
     list-style-type: none;
     width: 100px;
     margin: 10px 0;
   }
-  .main .postBox .postInfo .postMenu .postMenuList ul li button {
+  .mainContainer .postBox .postInfo .postMenu .postMenuList ul li button {
     font-size: 15px;
     position: relative;
     left: -10px;
   }
-  .main .postBox .postInfo .postMenu .postMenuList ul li button i {
+  .mainContainer .postBox .postInfo .postMenu .postMenuList ul li button i {
     position: relative;
     left: -10px;
   }
-  .main .postBox .counter {
+  .mainContainer .postBox .counter {
     width: 93%;
   }
-  .main .postBox .counter .count {
+  .mainContainer .postBox .counter .count {
     display: flex;
     justify-content: left;
     font-size: 15px;
     font-weight: 600;
   }
-  .main .postBox .commentBox {
+  .mainContainer .postBox .commentBox {
     margin-top: 10px;
     display: flex;
     justify-content: left;
     align-items: center;
     width: 95%;
   }
-  .main .postBox .commentBox i {
+  .mainContainer .postBox .commentBox i {
     font-size: 25px;
     background-color: rgb(234, 234, 234);
     padding: 8px 10px;
     border-radius: 50px;
   }
-  .main .postBox .commentBox input {
+  .mainContainer .postBox .commentBox input {
     width: 80%;
     height: 30px;
     border-radius: 10px;
@@ -212,6 +212,26 @@ body {
     margin-left: 10px;
     text-indent: 10px;
     outline: none;
+  }
+  .mainContainer .reload {
+    display: none;
+  }
+  .mainContainer .reload button {
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .mainContainer .reload i {
+    transition: 0.3s;
+  }
+  .mainContainer .reload button:hover {
+    opacity: 70%;
+  }
+  .mainContainer .reload button:hover i {
+    transform: rotate(180deg);
   }
   .loadingBox {
     background-color: rgb(255, 255, 255);
@@ -259,7 +279,7 @@ body {
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  .main {
+  .mainContainer {
     width: 100%;
     margin: 5vh 0;
     display: flex;
@@ -270,7 +290,7 @@ body {
     flex-direction: column;
     transition: 0.5s;
   }
-  .main .postBox {
+  .mainContainer .postBox {
     margin: 50px 0;
     display: flex;
     justify-content: center;
@@ -279,50 +299,78 @@ body {
     width: 80%;
     border-radius: 20px;
     padding-bottom: 20px;
+    position: relative;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
-  .main .postBox img {
+  .mainContainer .postBox img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin-bottom: 10px;
     width: 100%;
   }
-  .main .postBox .postInfo {
+  .mainContainer .postBox .postInfo {
     width: 95%;
     height: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
   }
-  .main .postBox .postInfo button {
+  .mainContainer .postBox .postInfo button {
     border: none;
     background-color: transparent;
     font-size: 25px;
     margin: 0 5px;
+    cursor: pointer;
   }
-  .main .postBox .counter {
+  .mainContainer .postBox .postMenu {
+    position: absolute;
+    right: 10px;
+  }
+  .mainContainer .postBox .postMenu .postMenuList {
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 10px;
+    position: absolute;
+    background-color: white;
+    right: 0;
+    transition: 0.3s;
+  }
+  .mainContainer .postBox .postMenu .postMenuList ul li {
+    list-style-type: none;
+    width: 100px;
+    margin: 10px 0;
+  }
+  .mainContainer .postBox .postMenu .postMenuList ul li button {
+    font-size: 15px;
+    position: relative;
+    left: -10px;
+  }
+  .mainContainer .postBox .postMenu .postMenuList ul li button i {
+    position: relative;
+    left: -10px;
+  }
+  .mainContainer .postBox .counter {
     width: 93%;
   }
-  .main .postBox .counter .count {
+  .mainContainer .postBox .counter .count {
     display: flex;
     justify-content: left;
     font-size: 15px;
     font-weight: 600;
   }
-  .main .postBox .commentBox {
+  .mainContainer .postBox .commentBox {
     margin-top: 10px;
     display: flex;
     justify-content: left;
     align-items: center;
     width: 95%;
   }
-  .main .postBox .commentBox i {
+  .mainContainer .postBox .commentBox i {
     font-size: 25px;
     background-color: rgb(234, 234, 234);
     padding: 8px 10px;
     border-radius: 50px;
   }
-  .main .postBox .commentBox input {
+  .mainContainer .postBox .commentBox input {
     width: 80%;
     height: 30px;
     border-radius: 10px;
@@ -331,6 +379,26 @@ body {
     margin-left: 10px;
     text-indent: 10px;
     outline: none;
+  }
+  .mainContainer .reload {
+    display: none;
+  }
+  .mainContainer .reload button {
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .mainContainer .reload i {
+    transition: 0.3s;
+  }
+  .mainContainer .reload button:hover {
+    opacity: 70%;
+  }
+  .mainContainer .reload button:hover i {
+    transform: rotate(180deg);
   }
   .loadingBox {
     background-color: rgb(255, 255, 255);
@@ -367,9 +435,13 @@ body {
   .show {
     bottom: 30px;
   }
+  .hideMenu {
+    transform: scale(0);
+    transform-origin: 100px top;
+  }
 }
 @media screen and (max-width: 480px) {
-  .main {
+  .mainContainer {
     width: 100%;
     margin: 5vh 0;
     display: flex;
@@ -380,7 +452,7 @@ body {
     flex-direction: column;
     transition: 0.5s;
   }
-  .main .postBox {
+  .mainContainer .postBox {
     margin: 50px 0;
     display: flex;
     justify-content: center;
@@ -389,50 +461,78 @@ body {
     width: 80%;
     border-radius: 20px;
     padding-bottom: 20px;
+    position: relative;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
-  .main .postBox img {
+  .mainContainer .postBox img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin-bottom: 10px;
     width: 100%;
   }
-  .main .postBox .postInfo {
+  .mainContainer .postBox .postInfo {
     width: 95%;
     height: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
   }
-  .main .postBox .postInfo button {
+  .mainContainer .postBox .postInfo button {
     border: none;
     background-color: transparent;
     font-size: 20px;
     margin: 0 5px;
+    cursor: pointer;
   }
-  .main .postBox .counter {
+  .mainContainer .postBox .postMenu {
+    position: absolute;
+    right: 10px;
+  }
+  .mainContainer .postBox .postMenu .postMenuList {
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 10px;
+    position: absolute;
+    background-color: white;
+    right: 0;
+    transition: 0.3s;
+  }
+  .mainContainer .postBox .postMenu .postMenuList ul li {
+    list-style-type: none;
+    width: 100px;
+    margin: 10px 0;
+  }
+  .mainContainer .postBox .postMenu .postMenuList ul li button {
+    font-size: 15px;
+    position: relative;
+    left: -10px;
+  }
+  .mainContainer .postBox .postMenu .postMenuList ul li button i {
+    position: relative;
+    left: -10px;
+  }
+  .mainContainer .postBox .counter {
     width: 93%;
   }
-  .main .postBox .counter .count {
+  .mainContainer .postBox .counter .count {
     display: flex;
     justify-content: left;
     font-size: 12px;
     font-weight: 600;
   }
-  .main .postBox .commentBox {
+  .mainContainer .postBox .commentBox {
     margin-top: 10px;
     display: flex;
     justify-content: left;
     align-items: center;
     width: 95%;
   }
-  .main .postBox .commentBox i {
+  .mainContainer .postBox .commentBox i {
     font-size: 20px;
     background-color: rgb(234, 234, 234);
     padding: 8px 10px;
     border-radius: 50px;
   }
-  .main .postBox .commentBox input {
+  .mainContainer .postBox .commentBox input {
     width: 250px;
     min-width: 20px;
     height: 30px;
@@ -443,6 +543,26 @@ body {
     text-indent: 10px;
     outline: none;
   }
+  .mainContainer .reload {
+    display: none;
+  }
+  .mainContainer .reload button {
+    font-size: 5vw;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .mainContainer .reload i {
+    transition: 0.3s;
+  }
+  .mainContainer .reload button:hover {
+    opacity: 70%;
+  }
+  .mainContainer .reload button:hover i {
+    transform: rotate(180deg);
+  }
   .loadingBox {
     background-color: rgb(255, 255, 255);
     position: fixed;
@@ -477,5 +597,9 @@ body {
   }
   .show {
     bottom: 30px;
+  }
+  .hideMenu {
+    transform: scale(0);
+    transform-origin: 100px top;
   }
 }/*# sourceMappingURL=style.css.map */
