@@ -5,6 +5,7 @@ const mainContainer = document.querySelector('.mainContainer')
 const loadingBox = document.querySelector('.loadingBox')
 const postMenuLists = document.querySelectorAll('.postMenuList')
 const reload = document.querySelector('.reload')
+const goUpBtn = document.querySelector('.goUpBtn')
 let postMenuBtns
 let deletePostBtns
 
@@ -116,13 +117,18 @@ const reloadPostFunc = () => {
     reload.style.display = "none"
 }
 
+const goUp = () => {
+    window.scrollTo(0, window.scrollY );
+
+    console.log('eee');
+}
+
 window.addEventListener('scroll', () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 	
 	// console.log( { scrollTop, scrollHeight, clientHeight });
 	
 	if(clientHeight + scrollTop >= scrollHeight - 5) {
-        // show the loading animation
         
         
         loadingDots()
@@ -140,7 +146,14 @@ window.addEventListener('scroll', () => {
 	}
 })
 
+window.addEventListener("scroll", function(){
+    const goUpBtn = document.querySelector('.goUp')
+    goUpBtn.classList.toggle("showGoUpBtn", window.scrollY > 500)
 
+    // goUpBtn.classList.toggle("showGoUpBtnOpen", window.scrollY > 500)
+    // goUpBtn.classList.toggle("showGoUpBtnClose", window.scrollY < 500)
+})
 
 reload.addEventListener('click', reloadPostFunc)
 document.addEventListener('DOMContentLoaded', reloadPostsBtn)
+goUpBtn.addEventListener('click', goUp)

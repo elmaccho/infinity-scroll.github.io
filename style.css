@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -72,6 +76,37 @@ body {
 }
 .footerNav .active {
   color: pink;
+}
+.footerNav .goUp {
+  position: fixed;
+  scale: 0;
+  transition: 0.3s;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footerNav .goUp a {
+  scroll-behavior: smooth;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #232323;
+  text-decoration: none;
+  text-align: center;
+}
+.footerNav .goUp a i {
+  font-size: 70px;
+  pointer-events: none;
+}
+.footerNav .goUp a p {
+  position: relative;
+  top: -20px;
+}
+.footerNav .showGoUpBtn {
+  scale: 1;
 }
 
 @keyframes dot1 {
