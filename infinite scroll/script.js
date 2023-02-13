@@ -22,10 +22,7 @@ const createPost = () => {
     const postCounter = document.createElement('div')
     const postPCount = document.createElement('p')
     const postComment = document.createElement('div')
-    const postMenuBtns = document.querySelectorAll('.postMenuBtn')
-    const deletePostBtns = document.querySelectorAll('.deletePostBtn')
 
-    
     
     postBox.append(postImg)
     postBox.append(postInfo)
@@ -77,18 +74,16 @@ const createPost = () => {
     postImg.setAttribute('src', `https://picsum.photos/680/500?random=${randId}`)
 
 
-
-    for(const postMenuBtn of postMenuBtns){
-        postMenuBtn.addEventListener('click', postMenuToggle)
-    }
-    
-    for(const deletePostBtn of deletePostBtns){
-        deletePostBtn.addEventListener('click', deletePost)
-    }
     mainContainer.append(postBox)
 
-    console.log(deletePostBtns);
-    console.log(postMenuBtns);
+    postInfo.querySelector('.postMenuBtn').addEventListener('click', postMenuToggle);
+    mainContainer.append(postBox);
+
+    postInfo.querySelector('.deletePostBtn').addEventListener('click', deletePost);
+    mainContainer.append(postBox);
+
+
+    reloadPostsBtn()
 }
 
 for(let i=0; i<pCounters.length; i++){
@@ -110,6 +105,8 @@ const postMenuToggle = (e) => {
 
 const deletePost = (e) => {
     e.target.closest(('.postBox')).remove()
+
+    reloadPostsBtn()
 }
 
 const reloadPostsBtn = () => {
@@ -152,7 +149,7 @@ window.addEventListener('scroll', () => {
 
 
 reload.addEventListener('click', reloadPostFunc)
-
+document.addEventListener('DOMContentLoaded', reloadPostsBtn)
 // for(const postMenuBtn of postMenuBtns){
 //     postMenuBtn.addEventListener('click', postMenuToggle)
 // }
@@ -160,4 +157,3 @@ reload.addEventListener('click', reloadPostFunc)
 // for(const deletePostBtn of deletePostBtns){
 //     deletePostBtn.addEventListener('click', deletePost)
 // }
-reloadPostsBtn()
