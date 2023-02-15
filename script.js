@@ -6,6 +6,7 @@ const loadingBox = document.querySelector('.loadingBox')
 const postMenuLists = document.querySelectorAll('.postMenuList')
 const reload = document.querySelector('.reload')
 const topBtn = document.querySelector('.topBtn')
+const navBox = document.querySelector('.navBox')
 let postMenuBtns
 let deletePostBtns
 
@@ -114,7 +115,7 @@ const reloadPostsBtn = () => {
     }
     else if (allPosts.length <= 1){
         createPost()
-        console.log('kurwo');
+        createPost()
     }
 }
 
@@ -153,7 +154,6 @@ window.addEventListener('scroll', () => {
             //     mainContainer.style.filter = "grayscale(0) blur(0)"
             //     topBtn.style.display = "block"
             // }, 1000);
-
 	}
 })
 
