@@ -80,6 +80,7 @@ const createPost = () => {
 
 
     reloadPostsBtn()
+    window.addEventListener('click', closeMenu)
 }
 
 for(let i=0; i<pCounters.length; i++){
@@ -128,9 +129,6 @@ const goUp = () => {
 }
 
 const closeMenu = (e) => {
-
-
-
     if (!document.getElementById('postMenuList').contains(e.target) && !document.getElementById('postMenuBtn').contains(e.target)){
         document.getElementById('postMenuList').classList.add('hideMenu')
     }
@@ -167,4 +165,3 @@ window.addEventListener("scroll", () => {
 reload.addEventListener('click', reloadPostFunc)
 document.addEventListener('DOMContentLoaded', reloadPostsBtn)
 topBtn.addEventListener('click', goUp)
-window.addEventListener('click', closeMenu)
