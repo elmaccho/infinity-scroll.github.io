@@ -5,7 +5,7 @@ const mainContainer = document.querySelector('.mainContainer')
 const loadingBox = document.querySelector('.loadingBox')
 const postMenuLists = document.querySelectorAll('.postMenuList')
 const reload = document.querySelector('.reload')
-const goUpBtn = document.querySelector('.goUpBtn')
+const topBtn = document.querySelector('.topBtn')
 let postMenuBtns
 let deletePostBtns
 
@@ -17,8 +17,9 @@ const createPost = () => {
     const postCounter = document.createElement('div')
     const postPCount = document.createElement('p')
     const postComment = document.createElement('div')
-
     
+
+
     postBox.append(postImg)
     postBox.append(postInfo)
     postCounter.append(postPCount)
@@ -44,11 +45,11 @@ const createPost = () => {
     </button>
     
                     <div class="postMenu">
-                    <button class="postMenuBtn">
+                    <button id="postMenuBtn" class="postMenuBtn">
                         <i class="fa-solid fa-ellipsis"></i>
                     </button>
 
-                    <div class="postMenuList hideMenu">
+                    <div id="postMenuList" class="postMenuList hideMenu">
                         <ul>
                             <li>
                                 <button class="deletePostBtn"><i class="fa-solid fa-caret-right"></i>Usuń post</button>
@@ -79,6 +80,8 @@ const createPost = () => {
 
 
     reloadPostsBtn()
+
+
 }
 
 for(let i=0; i<pCounters.length; i++){
@@ -91,6 +94,7 @@ for(let i=0; i<pCounters.length; i++){
 const loadingDots = () => {
     document.body.style.overflow = "hidden"
     loadingBox.classList.add("show")
+    topBtn.style.display = "none"
 }
 
 const postMenuToggle = (e) => {
@@ -119,8 +123,12 @@ const reloadPostFunc = () => {
 
 const goUp = () => {
     window.scrollTo(0, window.scrollY );
+}
 
-    console.log('eee');
+const closeMenu = (e) => {
+    if (!document.getElementById('postMenuList').contains(e.target) && !document.getElementById('postMenuBtn').contains(e.target)){
+        document.getElementById('postMenuList').classList.add('hideMenu')
+    }
 }
 
 window.addEventListener('scroll', () => {
@@ -131,29 +139,27 @@ window.addEventListener('scroll', () => {
 	if(clientHeight + scrollTop >= scrollHeight - 5) {
         
         
-        loadingDots()
-        mainContainer.style.filter = "grayscale(90%) blur(3px)"
+        // loadingDots()
+        // mainContainer.style.filter = "grayscale(90%) blur(3px)"
         
-        setTimeout(() => {
+        // setTimeout(() => {
             createPost()
                 createPost()
-
-                document.body.style.overflowY = "scroll"
-                loadingBox.classList.remove("show")
-                mainContainer.style.filter = "grayscale(0) blur(0)"
-            }, 1000);
+            //     document.body.style.overflowY = "scroll"
+            //     loadingBox.classList.remove("show")
+            //     mainContainer.style.filter = "grayscale(0) blur(0)"
+            //     topBtn.style.display = "block"
+            // }, 1000);
 
 	}
 })
 
-window.addEventListener("scroll", function(){
-    const goUpBtn = document.querySelector('.goUp')
-    goUpBtn.classList.toggle("showGoUpBtn", window.scrollY > 500)
-
-    // goUpBtn.classList.toggle("showGoUpBtnOpen", window.scrollY > 500)
-    // goUpBtn.classList.toggle("showGoUpBtnClose", window.scrollY < 500)
+window.addEventListener("scroll", () => {
+    const topBtn = document.querySelector('.topBtn')
+    topBtn.classList.toggle("showGoUpBtn", window.scrollY > 500)
 })
 
 reload.addEventListener('click', reloadPostFunc)
 document.addEventListener('DOMContentLoaded', reloadPostsBtn)
-goUpBtn.addEventListener('click', goUp)
+topBtn.addEventListener('click', goUp)
+window.addEventListener('click', closeMenu)

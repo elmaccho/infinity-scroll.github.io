@@ -17,7 +17,6 @@ body{
     overflow-y: scroll;
 }
 
-
 .headerNav{
     height: 5vh;
     width: 100%;
@@ -54,14 +53,14 @@ body{
         transition: 0.3s;
     }
 
-}
-
-
+}    
 
 .footerNav{
     height: 5vh;
     width: 100%;
     background-color: rgb(255, 255, 255);
+    padding: 10px 0;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 7px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 
     position: fixed;
     bottom:0;
@@ -75,6 +74,11 @@ body{
         background-color: transparent;
         font-size: 18px;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
 
         i{
             pointer-events: none;
@@ -124,9 +128,58 @@ body{
 
     }
 
-    .showGoUpBtn{
-        scale:1;
+    // .showGoUpBtn{
+    //     scale:1;
+    // }
+}
+
+.topBtn{
+    z-index: 1;
+    position: fixed;
+    bottom:80px;
+    right:20px;
+    scale: 0;
+    transition: 0.3s;
+
+    
+    .goUp{
+
+        transition: 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 50px;
+        padding: 0 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+        a{
+            scroll-behavior: smooth;
+            border:none;
+            background-color: transparent;
+            cursor: pointer;
+            color: #232323;
+            text-decoration: none;
+            text-align: center;
+
+            i{
+                font-size: 60px;
+                pointer-events: none;
+            }
+            p{
+                position: relative;
+                top: -20px;
+                display: none;
+            }
+        }
+
     }
+}
+
+
+.showGoUpBtn{
+    scale:1;
 }
 
 // .showGoUpBtnOpen{
@@ -173,59 +226,59 @@ body{
 
 
 
-@keyframes dot1{
-    0%
-        {
-            transform: translateY(0px)
-        }
+// @keyframes dot1{
+//     0%
+//         {
+//             transform: translateY(0px)
+//         }
 
-    50%
-        {
-            transform: translateY(-10px)
-        }
+//     50%
+//         {
+//             transform: translateY(-10px)
+//         }
     
-    100%
-        {
-            transform: translateY(0px)
-        }
+//     100%
+//         {
+//             transform: translateY(0px)
+//         }
     
-}
+// }
 
-@keyframes dot2{
-    0%
-        {
-            transform: translateY(0px)
-        }
+// @keyframes dot2{
+//     0%
+//         {
+//             transform: translateY(0px)
+//         }
 
-    50%
-        {
-            transform: translateY(-10px)
-        }
+//     50%
+//         {
+//             transform: translateY(-10px)
+//         }
     
-    100%
-        {
-            transform: translateY(0px)
-        }
+//     100%
+//         {
+//             transform: translateY(0px)
+//         }
     
-}
+// }
 
-@keyframes dot3{
-    0%
-        {
-            transform: translateY(0px)
-        }
+// @keyframes dot3{
+//     0%
+//         {
+//             transform: translateY(0px)
+//         }
 
-    50%
-        {
-            transform: translateY(-10px)
-        }
+//     50%
+//         {
+//             transform: translateY(-10px)
+//         }
     
-    100%
-        {
-            transform: translateY(0px)
-        }
+//     100%
+//         {
+//             transform: translateY(0px)
+//         }
     
-}
+// }
 
 @media screen and (min-width: 769px){
     .mainContainer{
@@ -386,44 +439,44 @@ body{
     
     }  
 
-    .loadingBox{
-        background-color: rgb(255, 255, 255);
-        position: fixed;
-        top:50%;
-        transform: translateY(-50%);
-        width: 20%;
-        height: 25%;
-        transition: 0.3s;
-        border-radius: 40px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-        opacity: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        scale:0;
+    // .loadingBox{
+    //     background-color: rgb(255, 255, 255);
+    //     position: fixed;
+    //     top:50%;
+    //     transform: translateY(-50%);
+    //     width: 20%;
+    //     height: 25%;
+    //     transition: 0.3s;
+    //     border-radius: 40px;
+    //     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    //     opacity: 80%;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     scale:0;
         
-        i{
-            margin: 0 5px;
-            font-size: 25px;
-        }
-        i:nth-child(1){
-            animation-name: dot1;
-            animation-duration: 1s;  
-            animation-iteration-count: infinite;      
-        }
-        i:nth-child(2){
-            animation-name: dot2;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;  
-            animation-delay: 0.1s;
-        }
-        i:nth-child(3){
-            animation-name: dot3;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;  
-            animation-delay: 0.2s;
-        }
-    }
+    //     i{
+    //         margin: 0 5px;
+    //         font-size: 25px;
+    //     }
+    //     i:nth-child(1){
+    //         animation-name: dot1;
+    //         animation-duration: 1s;  
+    //         animation-iteration-count: infinite;      
+    //     }
+    //     i:nth-child(2){
+    //         animation-name: dot2;
+    //         animation-duration: 1s;
+    //         animation-iteration-count: infinite;  
+    //         animation-delay: 0.1s;
+    //     }
+    //     i:nth-child(3){
+    //         animation-name: dot3;
+    //         animation-duration: 1s;
+    //         animation-iteration-count: infinite;  
+    //         animation-delay: 0.2s;
+    //     }
+    // }
 
     .show{
         scale:1;
@@ -589,40 +642,40 @@ body{
     
     }  
 
-    .loadingBox{
-        background-color: rgb(255, 255, 255);
-        position: fixed;
-        bottom:-50px;
-        width: 100%;
-        height: 50px;
-        transition: 0.3s;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    // .loadingBox{
+    //     background-color: rgb(255, 255, 255);
+    //     position: fixed;
+    //     bottom:-50px;
+    //     width: 100%;
+    //     height: 50px;
+    //     transition: 0.3s;
+    //     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
         
-        i{
-            margin: 0 5px;
-        }
-        i:nth-child(1){
-            animation-name: dot1;
-            animation-duration: 1s;  
-            animation-iteration-count: infinite;      
-        }
-        i:nth-child(2){
-            animation-name: dot2;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;  
-            animation-delay: 0.1s;
-        }
-        i:nth-child(3){
-            animation-name: dot3;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;  
-            animation-delay: 0.2s;
-        }
-    }
+    //     i{
+    //         margin: 0 5px;
+    //     }
+    //     i:nth-child(1){
+    //         animation-name: dot1;
+    //         animation-duration: 1s;  
+    //         animation-iteration-count: infinite;      
+    //     }
+    //     i:nth-child(2){
+    //         animation-name: dot2;
+    //         animation-duration: 1s;
+    //         animation-iteration-count: infinite;  
+    //         animation-delay: 0.1s;
+    //     }
+    //     i:nth-child(3){
+    //         animation-name: dot3;
+    //         animation-duration: 1s;
+    //         animation-iteration-count: infinite;  
+    //         animation-delay: 0.2s;
+    //     }
+    // }
     
     .show{
             bottom:30px;
@@ -631,9 +684,17 @@ body{
         transform: scale(0);
         transform-origin: 100px top;
     }
+
+    .navBtn{
+        p{
+            font-size: 2.5vw;
+        }
+    }
+
 }
 
 @media screen and (max-width: 480px) {
+
     .mainContainer{
         // background-color: green;
         width: 100%;
@@ -787,40 +848,40 @@ body{
     
     }  
 
-    .loadingBox{
-        background-color: rgb(255, 255, 255);
-        position: fixed;
-        bottom:-50px;
-        width: 100%;
-        height: 50px;
-        transition: 0.3s;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    // .loadingBox{
+    //     background-color: rgb(255, 255, 255);
+    //     position: fixed;
+    //     bottom:-50px;
+    //     width: 100%;
+    //     height: 50px;
+    //     transition: 0.3s;
+    //     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
         
-        i{
-            margin: 0 5px;
-        }
-        i:nth-child(1){
-            animation-name: dot1;
-            animation-duration: 1s;  
-            animation-iteration-count: infinite;      
-        }
-        i:nth-child(2){
-            animation-name: dot2;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;  
-            animation-delay: 0.1s;
-        }
-        i:nth-child(3){
-            animation-name: dot3;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;  
-            animation-delay: 0.2s;
-        }
-    }
+    //     i{
+    //         margin: 0 5px;
+    //     }
+    //     i:nth-child(1){
+    //         animation-name: dot1;
+    //         animation-duration: 1s;  
+    //         animation-iteration-count: infinite;      
+    //     }
+    //     i:nth-child(2){
+    //         animation-name: dot2;
+    //         animation-duration: 1s;
+    //         animation-iteration-count: infinite;  
+    //         animation-delay: 0.1s;
+    //     }
+    //     i:nth-child(3){
+    //         animation-name: dot3;
+    //         animation-duration: 1s;
+    //         animation-iteration-count: infinite;  
+    //         animation-delay: 0.2s;
+    //     }
+    // }
     
     .show{
             bottom:30px;
@@ -829,5 +890,11 @@ body{
     .hideMenu{
         transform: scale(0);
         transform-origin: 100px top;
+    }
+
+    .navBtn{
+        p{
+            display: none;
+        }
     }
 }
