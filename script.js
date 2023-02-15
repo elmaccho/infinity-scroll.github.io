@@ -80,8 +80,6 @@ const createPost = () => {
 
 
     reloadPostsBtn()
-
-
 }
 
 for(let i=0; i<pCounters.length; i++){
@@ -113,8 +111,9 @@ const reloadPostsBtn = () => {
     if(allPosts.length === 0){
         reload.style.display = "block"
     }
-    else if (allPosts.length === 1){
+    else if (allPosts.length <= 1){
         createPost()
+        console.log('kurwo');
     }
 }
 
@@ -129,6 +128,9 @@ const goUp = () => {
 }
 
 const closeMenu = (e) => {
+
+
+
     if (!document.getElementById('postMenuList').contains(e.target) && !document.getElementById('postMenuBtn').contains(e.target)){
         document.getElementById('postMenuList').classList.add('hideMenu')
     }
