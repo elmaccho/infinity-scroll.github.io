@@ -113,6 +113,9 @@ const reloadPostsBtn = () => {
     if(allPosts.length === 0){
         reload.style.display = "block"
     }
+    else if (allPosts.length === 1){
+        createPost()
+    }
 }
 
 const reloadPostFunc = () => {
